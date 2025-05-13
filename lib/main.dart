@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'pages/splash.dart';
 
 void main() {
@@ -10,6 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Splash());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Splash(),
+      theme: ThemeData(scaffoldBackgroundColor: Color(0xFFF0F0EF)),
+    );
   }
 }
