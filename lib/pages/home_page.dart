@@ -15,16 +15,21 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
+            // Top Bar
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 12,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Logo & Title
                   Row(
                     children: [
-                      Image.asset('assets/icons/slice.png'),
-                      Gap(4),
-                      Text(
+                      Image.asset('assets/icons/slice.png', height: 24),
+                      const Gap(4),
+                      const Text(
                         'Pizza',
                         style: TextStyle(
                           fontSize: 18,
@@ -34,53 +39,98 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+
+                  // Location Selector
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.location_on_outlined,
                         color: Color(0xFFF4900C),
                       ),
-                      Text(
+                      const Text(
                         'Cairo,',
-                        style: TextStyle(fontSize: 18, color: Colors.black),
+                        style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
-                      Gap(4),
-                      Image.asset('assets/icons/fg.png'),
-                      Icon(Icons.keyboard_arrow_down),
+                      const Gap(4),
+                      Image.asset('assets/icons/fg.png', height: 20),
+                      const Icon(Icons.keyboard_arrow_down),
                     ],
                   ),
-                  Row(
+
+                  // Favorite with Notification Badge
+                  Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      Stack(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: Color(0xFFDFDFDF),
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: Icon(
-                              Icons.favorite_border_outlined,
-                              size: 24,
-                            ),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFDFDFDF),
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                        child: const Icon(
+                          Icons.favorite_border_outlined,
+                          size: 24,
+                        ),
+                      ),
+                      Positioned(
+                        top: -4,
+                        right: -4,
+                        child: Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: const BoxDecoration(
+                            color: Colors.red,
+                            shape: BoxShape.circle,
                           ),
-                          Positioned(
-                            top: 12,
-                            left: 12,
-                            child: Container(
-                              padding: EdgeInsets.all(7),
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF4900C),
-                                shape: BoxShape.circle,
-                              ),
-                            ),
+                          child: const Text(
+                            '3',
+                            style: TextStyle(fontSize: 10, color: Colors.white),
                           ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
+            ),
+
+            // Promo Banner
+            Stack(
+              children: [
+                Container(
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 20,
+                  ),
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFEAE6DF),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                Positioned(
+                  right: 30,
+                  top: 8,
+                  child: Image.asset('assets/images/girl.png', height: 100),
+                ),
+                Positioned(
+                  top: 30,
+                  left: 30,
+                  child: Row(
+                    children: [
+                      Image.asset('assets/icons/fire.png', height: 24),
+                      const Gap(8),
+                      const Text(
+                        'Hot Deals!',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFF4900C),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
