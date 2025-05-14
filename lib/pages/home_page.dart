@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/my_search_field.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -101,37 +103,68 @@ class _HomePageState extends State<HomePage> {
                     horizontal: 20,
                     vertical: 20,
                   ),
-                  height: 100,
+                  height: 110,
                   decoration: BoxDecoration(
                     color: const Color(0xFFEAE6DF),
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
                 Positioned(
-                  right: 30,
-                  top: 8,
-                  child: Image.asset('assets/images/girl.png', height: 100),
+                  right: 34,
+                  top: 0,
+                  child: Image.asset('assets/images/girl.png'),
                 ),
                 Positioned(
-                  top: 30,
+                  top: 36,
                   left: 30,
-                  child: Row(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Image.asset('assets/icons/fire.png', height: 24),
-                      const Gap(8),
-                      const Text(
-                        'Hot Deals!',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFFF4900C),
-                        ),
+                      Row(
+                        children: [
+                          Image.asset('assets/icons/fire.png'),
+                          const Gap(8),
+                          const Text(
+                            'Eat Fresh Pizza',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset('assets/icons/ele.png'),
+                          const Gap(12),
+                          const Text(
+                            'Fast Delivery',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset('assets/icons/star.png'),
+                          const Gap(12),
+                          const Text(
+                            'Near For You',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
               ],
             ),
+            MySearchField(),
           ],
         ),
       ),
