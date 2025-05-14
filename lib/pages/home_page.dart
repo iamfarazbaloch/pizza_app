@@ -51,13 +51,31 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Row(
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Color(0xFFDFDFDF),
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Icon(Icons.favorite_border_outlined, size: 24),
+                      Stack(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFDFDFDF),
+                              borderRadius: BorderRadius.circular(24),
+                            ),
+                            child: Icon(
+                              Icons.favorite_border_outlined,
+                              size: 24,
+                            ),
+                          ),
+                          Positioned(
+                            top: 12,
+                            left: 12,
+                            child: Container(
+                              padding: EdgeInsets.all(7),
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF4900C),
+                                shape: BoxShape.circle,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
